@@ -1,13 +1,240 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Titillium Web", sans-serif;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #9575de;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  background-color: #6554af;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+}
+
+.goals {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.goal {
+  width: 300px;
+  box-shadow: 0 0 10px rgba(207, 207, 207, 0.5);
+  border-radius: 5px;
+  margin: 30px 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+
+.goal hr {
+  width: 100%;
+  height: 10px;
+  margin: 0 0 10px;
+  border: none;
+  border-radius: 5px 5px 0 0;
+}
+.goal hr.red {
+  background-color: #da4100;
+}
+.goal hr.yellow {
+  background-color: #ffe605;
+}
+.goal hr.blue {
+  background-color: #307bbb;
+}
+.goal hr.green {
+  background-color: rgb(0, 174, 93);
+}
+.goal .buttons {
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.goal .title {
+  color: #2b2730;
+}
+.goal .targets {
+  color: #9575de;
+  font-style: 10px;
+  border-bottom: #9575de 1px dashed;
+}
+.goal .data {
+  align-self: flex-end;
+  color: rgb(192, 192, 192);
+}
+
+.popup {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+}
+
+.form-add-goal {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.input label {
+  font-style: 15px;
+  font-weight: bold;
+}
+.input input {
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.form-add-goal .button {
+  width: 80%;
+}
+
+.form-add-goal .steps {
+  max-height: 400px;
+  width: 300px;
+  overflow-y: scroll;
+  margin: 10px 0;
+}
+/* customize scroll bar*/
+.form-add-goal .steps::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.form-add-goal .steps::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.form-add-goal .steps::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+.form-add-goal .steps div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-add-goal .steps div p {
+  word-wrap: break-word;
+}
+
+.form-add-goal .buttons,
+.form-update-goal .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-add-goal .buttons .button:first-child,
+.form-update-goal .buttons .button:first-child {
+  flex: 1 !important;
+  background: green !important;
+}
+
+.form-add-goal .buttons .button:last-child,
+.form-update-goal .buttons .button:last-child {
+  margin-left: 5px;
+  flex: 2 !important;
+}
+
+.form-update-goal {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-update-goal .steps {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form-update-goal .steps .step {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-update-goal .steps .step label {
+  flex: 4;
+}
+
+.checked {
+  color: rgb(0, 29, 174);
+  text-decoration: line-through rgb(0, 17, 174);
 }
