@@ -5,7 +5,7 @@ The goal tracker is a small React app designed to help you track your goals and 
 This project was made to practice more state management within a React application.
 
 ### Demo Video
-If you just want to see the results and how the app works, you can watch the video named `goal-tracker.mp4`.
+If you just want to see the results and how the app works, you can watch the video named `goal-tracker.mp4`.(you will have to download it)
 
 ### Resources
 - Percentage circle : https://gist.github.com/ehne/327e458d2dbd786414c364c5b0b90cab
